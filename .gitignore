@@ -10,3 +10,4 @@
 .idea
 /src-tauri/Cargo.lock
 /src-tauri/.gitignore
+/src-tauri/target
