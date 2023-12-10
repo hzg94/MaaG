@@ -7,3 +7,6 @@
 /src/.umi-test
 /dist
 .swc
+.idea
+/src-tauri/Cargo.lock
+/src-tauri/.gitignore
