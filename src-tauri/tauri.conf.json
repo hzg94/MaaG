@@ -58,8 +58,21 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
+        "focus": false,
         "title": "MaaG",
+        "visible": true,
         "width": 800
+      },
+      {
+        "width": 350,
+        "height": 200,
+        "focus": true,
+        "center": true,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "url": "/LoadPage/index.html",
+        "label": "splashscreen"
       }
     ]
   }

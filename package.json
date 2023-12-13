@@ -10,6 +10,9 @@
     "G:Dev": "pnpm tauri dev"
   },
   "dependencies": {
+    "@ant-design/pro-components": "^2.6.43",
+    "@tauri-apps/api": "^1.5.1",
+    "antd": "^5.12.2",
     "umi": "^4.0.89"
   },
   "devDependencies": {
