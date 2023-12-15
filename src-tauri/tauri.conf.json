@@ -42,6 +42,10 @@
       "shortDescription": "",
       "targets": "all",
       "windows": {
+        "webviewInstallMode": {
+          "type": "embedBootstrapper",
+          "silent": true
+        },
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",
         "timestampUrl": ""
