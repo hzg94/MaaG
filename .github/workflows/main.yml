@@ -49,6 +49,15 @@ jobs:
         # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
         run: pnpm install # Change this to npm, yarn or pnpm.
 
+      - name: Install rust macos arm support (macos arm only)
+        if: matrix.platform == 'macos-latest'
+        # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
+        run: rustup target add aarch64-apple-darwin # Change this to npm, yarn or pnpm.
+
+      - name: Install rust macos arm support (windows arm only)
+        if: matrix.platform == 'windows-latest'
+        # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
+        run: rustup target add aarch64-pc-windows-msvc # Change this to npm, yarn or pnpm.
 
       - name: Build the app (macos arm only)
         if: matrix.platform == 'macos-latest'
