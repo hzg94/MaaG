@@ -38,7 +38,7 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: latest
-          
+
       - name: Sync node version and setup cache
         uses: actions/setup-node@v4
         with:
@@ -48,6 +48,19 @@ jobs:
       - name: Install frontend dependencies
         # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
         run: pnpm install # Change this to npm, yarn or pnpm.
+
+      - name: Build the app (windows x32 only)
+        if: matrix.platform == 'windows-latest'
+        uses: tauri-apps/tauri-action@v0
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: ${{ github.ref_name }} # This only works if your workflow triggers on new tags.
+          releaseName: 'MaaG v__VERSION__' # tauri-action replaces \_\_VERSION\_\_ with the app version.
+          releaseBody: 'See the assets to download and install this version.'
+          prerelease: false
+          args: --target i686-pc-windows-msvc
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
