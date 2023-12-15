@@ -51,7 +51,7 @@ jobs:
 
 
       - name: Build the app (macos arm only)
-        if: matrix.platform == 'windows-latest'
+        if: matrix.platform == 'macos-latest'
         uses: tauri-apps/tauri-action@v0
 
         env:
